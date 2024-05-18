@@ -1,0 +1,12 @@
+Declaración de variables:
+Las variables x, y y z se declaran como palabras de 16 bits (dw) con valores iniciales que son caracteres ('8', '3', '1'). Estos caracteres se almacenan en memoria como sus códigos ASCII.
+
+Conversión de caracteres a valores numéricos:
+Al cargar estos valores en los registros eax, ebx y ecx y restarles el valor ASCII de '0', se convierten en sus equivalentes numéricos para poder realizar operaciones aritméticas con ellos.
+
+Operaciones aritméticas:
+Se realizan las operaciones de resta entre los valores numéricos de x, y y z en los registros eax, ebx y ecx, respectivamente.
+
+Conversión de valores numéricos a caracteres:
+Al sumar el valor ASCII de '0' al resultado en eax, se convierte de nuevo en un carácter para poder ser almacenado y mostrado como parte del mensaje.
+En resumen, en este caso, se está realizando una conversión de caracteres a valores numéricos al restar el valor ASCII de '0' a las variables x, y y z, permitiendo luego realizar operaciones aritméticas con estos valores numéricos en lenguaje ensamblador.

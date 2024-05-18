@@ -1,0 +1,25 @@
+En la sección .data, se declaran las variables:
+
+x y y son variables de 8 bits (1 byte) que almacenan los caracteres '3' y '10' respectivamente.
+
+msg es un mensaje que se imprimirá en pantalla.
+
+len es una constante que contiene la longitud del mensaje.
+
+En la sección .bss, se reserva espacio en memoria para la variable prod, que almacenará el resultado de la multiplicación. Se reservan 3 bytes, ya que el resultado puede ser de hasta 2 dígitos.
+
+En la sección .text, se define el punto de entrada del programa (_start).
+
+Se carga el valor de x en el registro al y se convierte de carácter a número restando '0' (sub al, '0'). Lo mismo se hace con y en el registro bl.
+
+Se realiza la multiplicación de al por bl usando la instrucción mul bl. El resultado se almacena en el registro ax, donde al contiene la parte baja (unidades) y ah la parte alta (decenas).
+
+Se convierte el resultado a caracteres sumando '00' a ax. Esto se hace para poder imprimir el resultado como texto.
+
+Se mueve el resultado de ax a la variable prod en memoria.
+
+Se imprime el mensaje almacenado en msg usando las interrupciones del sistema operativo.
+
+Se imprime el resultado almacenado en prod usando las interrupciones del sistema operativo. Se especifica que se impriman 2 bytes, ya que el resultado tiene 2 dígitos.
+
+Finalmente, se termina el programa usando la interrupción sys_exit.
